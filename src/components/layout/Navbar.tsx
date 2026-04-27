@@ -24,12 +24,9 @@ export default function Navbar({ currentRoute = '/' }: NavbarProps) {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isAIChatOpen, setIsAIChatOpen] = useState(false);
     const [aiInitialMenu, setAiInitialMenu] = useState<string | null>(null);
-    const isBuildAgentPage = currentRoute === '/build-agent';
-    const useCompactHeader = isBuildAgentPage || isScrolled;
+    const useCompactHeader = isScrolled;
 
-    const navLinks = isBuildAgentPage
-        ? [{ name: 'Home', href: '#/' }]
-        : NAV_LINKS;
+    const navLinks = NAV_LINKS;
 
     useEffect(() => {
         const handleScroll = () => {
@@ -54,15 +51,15 @@ export default function Navbar({ currentRoute = '/' }: NavbarProps) {
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center gap-8">
-                    {!isBuildAgentPage && (
-                        <a
-                            href="#/build-agent"
-                            className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-500 transition-colors relative group"
-                        >
-                            Build Agent
-                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full rounded-full" />
-                        </a>
-                    )}
+                    <a
+                        href="https://forms.cloud.microsoft/pages/responsepage.aspx?id=WZzF509j40eO7Re393kk8KIi7ZBJxRtIkfvxr0U5Lh1UOFg1OEdORUpOMEVKUzczV1FKSkExWjU5UC4u&route=shorturl"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-500 transition-colors relative group"
+                    >
+                        Build Agent
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full rounded-full" />
+                    </a>
                     {navLinks.map((link) => (
                         link.openInAI ? (
                             <button
@@ -93,49 +90,43 @@ export default function Navbar({ currentRoute = '/' }: NavbarProps) {
                 {/* Desktop Actions */}
                 <div className="hidden md:flex items-center gap-4">
                     <ThemeToggle />
-                    {!isBuildAgentPage && (
-                        <>
-                            <button
-                                type="button"
-                                onClick={() => {
-                                    setAiInitialMenu(null);
-                                    setIsAIChatOpen(true);
-                                }}
-                                className="btn-brand"
-                            >
-                                Ask AI
-                            </button>
-                            <a
-                                href="mailto:Info@ambot365.com"
-                                className="btn-brand"
-                            >
-                                Get in Touch
-                            </a>
-                            <a
-                                href="mailto:Info@ambot365.com"
-                                className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-500 transition-colors"
-                            >
-                                Info@ambot365.com
-                            </a>
-                        </>
-                    )}
+                    <button
+                        type="button"
+                        onClick={() => {
+                            setAiInitialMenu(null);
+                            setIsAIChatOpen(true);
+                        }}
+                        className="btn-brand"
+                    >
+                        Ask AI
+                    </button>
+                    <a
+                        href="mailto:Info@ambot365.com"
+                        className="btn-brand"
+                    >
+                        Get in Touch
+                    </a>
+                    <a
+                        href="mailto:Info@ambot365.com"
+                        className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-500 transition-colors"
+                    >
+                        Info@ambot365.com
+                    </a>
                 </div>
 
                 {/* Mobile Menu Toggle */}
                 <div className="md:hidden flex items-center gap-4">
                     <ThemeToggle />
-                    {!isBuildAgentPage && (
-                        <button
-                            type="button"
-                            onClick={() => {
-                                setAiInitialMenu(null);
-                                setIsAIChatOpen(true);
-                            }}
-                            className="inline-flex btn-brand text-xs px-3 py-1.5 whitespace-nowrap"
-                        >
-                            Ask AI
-                        </button>
-                    )}
+                    <button
+                        type="button"
+                        onClick={() => {
+                            setAiInitialMenu(null);
+                            setIsAIChatOpen(true);
+                        }}
+                        className="inline-flex btn-brand text-xs px-3 py-1.5 whitespace-nowrap"
+                    >
+                        Ask AI
+                    </button>
                     <button
                         className="p-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -157,15 +148,15 @@ export default function Navbar({ currentRoute = '/' }: NavbarProps) {
                         className="absolute top-full left-0 right-0 bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800 shadow-xl overflow-hidden md:hidden"
                     >
                         <div className="px-6 py-4 flex flex-col gap-4">
-                            {!isBuildAgentPage && (
-                                <a
-                                    href="#/build-agent"
-                                    onClick={() => setIsMobileMenuOpen(false)}
-                                    className="text-base font-medium text-gray-900 dark:text-gray-100 py-3 border-b border-gray-100 dark:border-gray-800 hover:text-primary-600 dark:hover:text-primary-500 transition-colors"
-                                >
-                                    Build Agent
-                                </a>
-                            )}
+                            <a
+                                href="https://forms.cloud.microsoft/pages/responsepage.aspx?id=WZzF509j40eO7Re393kk8KIi7ZBJxRtIkfvxr0U5Lh1UOFg1OEdORUpOMEVKUzczV1FKSkExWjU5UC4u&route=shorturl"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="text-base font-medium text-gray-900 dark:text-gray-100 py-3 border-b border-gray-100 dark:border-gray-800 hover:text-primary-600 dark:hover:text-primary-500 transition-colors"
+                            >
+                                Build Agent
+                            </a>
                             {navLinks.map((link) => (
                                 link.openInAI ? (
                                     <button

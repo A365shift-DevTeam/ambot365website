@@ -11,7 +11,7 @@ import SolutionsOverview from './components/sections/SolutionsOverview';
 import ProcessComparison from './components/sections/ProcessComparison';
 import HowEngagementsWork from './components/sections/HowEngagementsWork';
 import WhyAmbot365 from './components/sections/WhyAmbot365';
-import BuildAgentForm from './components/sections/BuildAgentForm';
+
 import StickyFooter from './components/ui/StickyFooter';
 import Navbar from './components/layout/Navbar';
 import FloatingWhatsApp from './components/ui/FloatingWhatsApp';
@@ -32,37 +32,29 @@ export default function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  const isBuildAgentPage = route === '/build-agent';
+
 
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 selection:bg-primary-500/30">
         <Navbar currentRoute={route} />
         <main>
-          {isBuildAgentPage ? (
-            <div className="pt-12 md:pt-14">
-              <BuildAgentForm />
-            </div>
-          ) : (
-            <>
-              <Hero />
-              <Separator />
-              <SolutionsOverview />
-              <Separator />
-              <AgentsInAction />
-              <Separator />
-              <ShowcaseCarousel />
-              <Separator />
-              <ProcessComparison />
-              <Separator />
-              <HowEngagementsWork />
-              <Separator />
-              {/* <Integrations />
-              <Separator /> */}
-              <WhyAmbot365 />
-              {/* <CTA /> */}
-            </>
-          )}
+          <Hero />
+          <Separator />
+          <SolutionsOverview />
+          <Separator />
+          <AgentsInAction />
+          <Separator />
+          <ShowcaseCarousel />
+          <Separator />
+          <ProcessComparison />
+          <Separator />
+          <HowEngagementsWork />
+          <Separator />
+          {/* <Integrations />
+          <Separator /> */}
+          <WhyAmbot365 />
+          {/* <CTA /> */}
         </main>
         <StickyFooter />
         <FloatingWhatsApp />

@@ -211,7 +211,9 @@ export default function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <motion.a
-            href="#/build-agent"
+            href="https://forms.cloud.microsoft/pages/responsepage.aspx?id=WZzF509j40eO7Re393kk8KIi7ZBJxRtIkfvxr0U5Lh1UOFg1OEdORUpOMEVKUzczV1FKSkExWjU5UC4u&route=shorturl"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#4C99A0] to-[#65A859] text-white rounded-2xl font-medium flex items-center justify-center gap-2 group shadow-lg shadow-[#4C99A0]/25"
             whileHover={{ scale: 1.02, y: -2, boxShadow: '0 20px 40px -12px rgba(76, 153, 160, 0.35)' }}
             whileTap={{ scale: 0.98 }}
@@ -248,13 +250,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
-          className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-7xl mx-auto"
+          className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto"
         >
           {[
             { icon: User, label: 'Ambrose Denny', sub: 'Founder of Ambot365' },
             { icon: Award, label: '40+ Years', sub: 'Combined Digital Expertise' },
             { icon: Globe, label: '50+ Clients', sub: 'Global Experience' },
-            { icon: Handshake, label: 'Digital Partners', sub: <><a  target="_blank" rel="noopener noreferrer" className="text-[#4C99A0]">A365Shift</a> & <a href="https://www.cshift.io/" target="_blank" rel="noopener noreferrer" className="text-[#4C99A0] hover:text-[#65A859] underline underline-offset-2 transition-colors">CShift</a></> },
           ].map((item, i) => (
             <motion.div
               key={i}
