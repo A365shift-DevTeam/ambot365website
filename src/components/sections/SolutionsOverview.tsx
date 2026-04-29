@@ -42,7 +42,7 @@ const COLUMNS = [
     title: 'Scalable Industry Products',
     badge: 'Products',
     icon: Package,
-    items: ['Office AI Bots', 'Customer Satisfaction'],
+    items: ['Office AI Bots'],
   },
 ];
 
